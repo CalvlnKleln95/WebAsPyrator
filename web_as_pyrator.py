@@ -13,6 +13,8 @@ modules.verify_url(ARGS.url)
 if ARGS.verbose:
 	modules.get_headers_http(ARGS.url, verbose=True)
 	modules.get_robots(ARGS.url, verbose=True)
+	modules.get_meta_tag_generator(ARGS.url)
 else:
 	modules.get_headers_http(ARGS.url)
 	modules.get_robots(ARGS.url)
+	modules.get_meta_tag_generator(ARGS.url)

@@ -9,3 +9,4 @@ from .verificators import verify_url
 
 from .passive import get_headers_http
 from .passive import get_robots
+from .passive import get_meta_tag_generator

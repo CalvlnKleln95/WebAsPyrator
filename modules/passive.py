@@ -77,3 +77,27 @@ def get_robots(an_url, verbose=False):
                     print("{color}{item}".format(color=color, item=item) + END)
     else:
         print(YELLOW + "This site does not have a \"robots.txt file\"." + END + "\n", file=sys.stderr)
+
+def get_meta_tag_generator(an_url):
+    """Function to get the meta tag generator
+
+        Args:
+            an_url (string) : Target's URL
+
+        Return:
+            None
+    """
+
+    print("\n" + PURPLE + "Meta tag generator recovery..." + END + "\n")
+
+    content = requests.get(an_url).text
+    soup = BeautifulSoup(content, "html.parser")
+
+    generator = soup.find_all("meta", attrs={"name": "generator"})
+    
+    if generator:
+        generator[0] = str(generator[0]).replace(generator[0]["content"], END + RED + generator[0]["content"] + END + WHITE)
+
+        print(WHITE + "{content_tag}".format(content_tag=generator[0]) + END + "\n")
+    else:
+        print(YELLOW + "This site does not have a meta tag \"generator\"." + END + "\n", file=sys.stderr)
