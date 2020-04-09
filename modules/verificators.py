@@ -10,6 +10,7 @@ RED = modules.COLORS["RED"]
 GREEN = modules.COLORS["GREEN"]
 YELLOW = modules.COLORS["YELLOW"]
 BLUE = modules.COLORS["BLUE"]
+PURPLE = modules.COLORS["PURPLE"]
 
 def verify_url(an_url):
     """Function to check the validity of URL
@@ -26,5 +27,7 @@ def verify_url(an_url):
     except requests.exceptions.MissingSchema:
         print(RED + "Invalid URL \"{URL}\"".format(URL=an_url) + END, file=sys.stderr)
         print(RED + "Perhaps you meant \"https://{URL}\" ?".format(URL=an_url) + END, file=sys.stderr)
+        sys.exit(1)
     except requests.exceptions.ConnectionError:
         print(RED + "The site \"{URL}\" can’t be reached".format(URL=an_url) + END, file=sys.stderr)
+        sys.exit(1)

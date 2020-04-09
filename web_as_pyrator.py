@@ -12,5 +12,7 @@ modules.verify_url(ARGS.url)
 
 if ARGS.verbose:
 	modules.get_headers_http(ARGS.url, verbose=True)
+	modules.get_robots(ARGS.url, verbose=True)
 else:
 	modules.get_headers_http(ARGS.url)
+	modules.get_robots(ARGS.url)

@@ -5,8 +5,9 @@ COLORS = {
     "WHITE": "\033[1m\033[89m",
     "RED": "\033[1m\033[91m",
     "GREEN": "\033[1m\033[92m",
-    "YELLOW": "\033[1m033[93m",
-    "BLUE": "\033[1m\033[94m"
+    "YELLOW": "\033[1m\033[93m",
+    "BLUE": "\033[1m\033[94m",
+    "PURPLE": "\033[1m\033[95m"
 }
 
 HTTP_HEADERS_LEAKS = [

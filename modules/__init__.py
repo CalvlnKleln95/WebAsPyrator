@@ -7,4 +7,5 @@ from .utils import display_header
 
 from .verificators import verify_url
 
-from.passive import get_headers_http
+from .passive import get_headers_http
+from .passive import get_robots
